@@ -1,8 +1,9 @@
 const express = require('express');
-const { getCalenderEvents } = require('./controller/calenderController');
+const { getCalenderEvents, addEventsToCalender } = require('./controller/calenderController');
 
 const userRoute = express.Router();
 
-userRoute.get('/',getCalenderEvents);
+userRoute.get('/events',getCalenderEvents);
+userRoute.post('/createEvent',addEventsToCalender);
 
 module.exports = userRoute;
